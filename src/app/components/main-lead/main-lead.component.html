@@ -1,0 +1,12 @@
+<div style="background-image: url(assets/header-bg.jpg); background-position: center; background-attachment: scroll; background-size: cover; width: 100%; height: 704px" *ngIf="mainLead">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 main-lead">
+        <img src="{{baseUrl}}/{{mainLead.logo}}" alt="logo">
+        <h1 class="lead-in">{{mainLead.lead_in}}</h1>
+        <h2 class="heading">{{mainLead.heading}}</h2>
+        <a [routerLink]="['/']" fragment="portfolio"><button mat-raised-button color="primary" size="2">{{mainLead.btn_text}}</button></a>
+      </div>
+    </div>
+  </div>
+</div>

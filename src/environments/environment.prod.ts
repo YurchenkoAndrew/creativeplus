@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: 'http://creative-plus.wsa',
+  baseUrlApi: 'http://creative-plus.wsa/api',
 };
