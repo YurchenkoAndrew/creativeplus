@@ -10,12 +10,17 @@
 <section id="about">
   <app-about></app-about>
 </section>
+<app-send-message></app-send-message>
 <section id="our-advantages">
   <app-our-advantages></app-our-advantages>
 </section>
+<app-send-message></app-send-message>
 <section id="order-execution-scheme">
   <app-order-execution-scheme></app-order-execution-scheme>
 </section>
 <section id="contacts">
-  <app-contacts></app-contacts>
+  <app-contacts
+    [contact]="contact"
+  ></app-contacts>
 </section>
+<app-footer [contact]="contact"></app-footer>

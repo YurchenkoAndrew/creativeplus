@@ -1,1 +1,12 @@
-<p>about works!</p>
+<div class="container" *ngIf="about">
+  <div class="row">
+    <div class="col-sm-12">
+      <p class="section-block-title">О нас</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="description" [innerHTML]="about.description"></div>
+    </div>
+  </div>
+</div>

@@ -16,4 +16,8 @@ export class CommonService<T> {
   get(id: number): Observable<T> {
     return this.httpClient.get<T>(this.url + '/' + id);
   }
+
+  add(obj: T): Observable<T> {
+    return this.httpClient.post<T>(this.url, obj);
+  }
 }

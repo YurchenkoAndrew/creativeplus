@@ -23,6 +23,22 @@ import {ContactsComponent} from './components/contacts/contacts.component';
 import {MAIN_LEAD_URL_TOKEN} from './data/services/main-lead.service';
 import {environment} from '../environments/environment';
 import {HttpClientModule} from '@angular/common/http';
+import {PORTFOLIO_URL_TOKEN} from './data/services/portfolio.service';
+import {SliderComponent} from './components/popup/slider/slider.component';
+import {CarouselModule} from 'ngx-owl-carousel-o';
+import {MatDialogModule} from '@angular/material/dialog';
+import {SERVICES_URL_TOKEN} from './data/services/services.service';
+import {ADDITIONAL_SERVICES_URL_TOKEN} from './data/services/additional-services.service';
+import {ABOUT_URL_TOKEN} from './data/services/about.service';
+import {SendMessageComponent} from './components/send-message/send-message.component';
+import {OUR_ADVANTAGE_URL_TOKEN} from './data/services/our-advantage.service';
+import {EXECUTION_URL_TOKEN} from './data/services/execution.service';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MAIL_URL_TOKEN} from './data/services/mail.service';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {CONTACT_URL_TOKEN} from './data/services/contact.service';
+import {FooterComponent} from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +52,10 @@ import {HttpClientModule} from '@angular/common/http';
     AboutComponent,
     OurAdvantagesComponent,
     OrderExecutionSchemeComponent,
-    ContactsComponent
+    ContactsComponent,
+    SliderComponent,
+    SendMessageComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,13 +68,55 @@ import {HttpClientModule} from '@angular/common/http';
     MatIconModule,
     MatListModule,
     HttpClientModule,
+    CarouselModule,
+    MatDialogModule,
+    MatListModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [
     {
       provide: MAIN_LEAD_URL_TOKEN,
       useValue: `${environment.baseUrlApi}/main-lead`
     },
+    {
+      provide: PORTFOLIO_URL_TOKEN,
+      useValue: `${environment.baseUrlApi}/portfolio`
+    },
+    {
+      provide: ADDITIONAL_SERVICES_URL_TOKEN,
+      useValue: `${environment.baseUrlApi}/additional-services`
+    },
+    {
+      provide: SERVICES_URL_TOKEN,
+      useValue: `${environment.baseUrlApi}/services`
+    },
+    {
+      provide: ABOUT_URL_TOKEN,
+      useValue: `${environment.baseUrlApi}/about`
+    },
+    {
+      provide: OUR_ADVANTAGE_URL_TOKEN,
+      useValue: `${environment.baseUrlApi}/our-advantage`
+    },
+    {
+      provide: EXECUTION_URL_TOKEN,
+      useValue: `${environment.baseUrlApi}/execution`
+    },
+    {
+      provide: MAIL_URL_TOKEN,
+      useValue: `${environment.baseUrlApi}/mail`
+    },
+    {
+      provide: CONTACT_URL_TOKEN,
+      useValue: `${environment.baseUrlApi}/contacts`
+    },
+  ],
+  entryComponents: [
+    SliderComponent
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,1 +1,24 @@
-<p>portfolio works!</p>
+<div class="container" *ngFor="let portfolio of portfolios">
+  <div class="row">
+    <div class="col-sm-12">
+      <p class="portfolio-block-title" *ngIf="portfolio.items.length > 0">{{portfolio.name}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 portfolio-items">
+      <div class="portfolio-item"
+           [class.sizeBlockHandset]="isHandset$ | async"
+           [class.sizeBlockNoHandset]="isNoHandset$ | async"
+           *ngFor="let item of portfolio.items"
+           (click)="onOpenDialog(item, portfolio.items)"
+      >
+        <div class="portfolio-item-image">
+          <img src="{{baseUrl}}/{{item.image}}" alt="{{item.name}}">
+        </div>
+        <div class="portfolio-item-description" *ngIf="item.description">
+          <p>{{item.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

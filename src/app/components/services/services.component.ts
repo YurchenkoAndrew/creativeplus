@@ -1,4 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {Services} from '../../data/models/services';
+import {AdditionalServices} from '../../data/models/additional-services';
+import {ServicesService} from '../../data/services/services.service';
+import {AdditionalServicesService} from '../../data/services/additional-services.service';
 
 @Component({
   selector: 'app-services',
@@ -7,9 +11,30 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor() { }
+  services!: Services[];
+  additionalServices!: AdditionalServices[];
+
+  constructor(
+    private service: ServicesService,
+    private additionalService: AdditionalServicesService
+  ) {
+  }
 
   ngOnInit(): void {
+    this.initServices();
+    this.initAdditionalServices();
+  }
+
+  initServices(): void {
+    this.service.getAll().subscribe((response: Services[]) => {
+      this.services = response;
+    });
+  }
+
+  initAdditionalServices(): void {
+    this.additionalService.getAll().subscribe(response => {
+      this.additionalServices = response;
+    });
   }
 
 }

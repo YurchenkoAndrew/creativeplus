@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {OurAdvantage} from '../../data/models/our-advantage';
+import {OurAdvantageService} from '../../data/services/our-advantage.service';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-our-advantages',
@@ -7,9 +10,18 @@ import {Component, OnInit} from '@angular/core';
 })
 export class OurAdvantagesComponent implements OnInit {
 
-  constructor() { }
+  baseUrl = environment.baseUrl;
+  ourAdvantages!: OurAdvantage[];
+
+  constructor(private service: OurAdvantageService) {
+  }
 
   ngOnInit(): void {
+    this.initOurAdvantages();
+  }
+
+  initOurAdvantages(): void {
+    this.service.getAll().subscribe(response => this.ourAdvantages = response);
   }
 
 }

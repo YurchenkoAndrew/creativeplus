@@ -1,0 +1,15 @@
+.wrapper-send-message {
+  padding: 4rem 0;
+  background: #1a237e;
+  .col-sm-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      background: white;
+      color: #1a237e;
+      font-size: 1.5rem;
+      line-height: 3.2rem;
+    }
+  }
+}

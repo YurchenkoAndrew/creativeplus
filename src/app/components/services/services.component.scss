@@ -1,0 +1,13 @@
+.list-item, .service-title {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+mat-divider {
+  margin: 2rem 0 0 0;
+}
+.divider-end {
+  border: blue 1px solid;
+}
+mat-list {
+  margin-bottom: 2rem;
+}

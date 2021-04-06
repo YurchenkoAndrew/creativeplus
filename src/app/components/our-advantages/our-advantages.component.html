@@ -1,1 +1,15 @@
-<p>our-advantages works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <p class="section-block-title">Наши преимущества</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 our-advantages">
+      <div class="wrapper" *ngFor="let item of ourAdvantages">
+        <img src="{{baseUrl}}/{{item.image}}" alt="{{item.text}}">
+        <p>{{item.text}}</p>
+      </div>
+    </div>
+  </div>
+</div>

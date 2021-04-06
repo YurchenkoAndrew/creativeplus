@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="section-block-title">Обратная связь</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 form">
+<!--        Start Form-->
+        <form [formGroup]="form" (ngSubmit)="formSubmit()">
+<!--          Field Name-->
+          <mat-form-field appearance="outline" color="primary">
+<!--            <mat-label>Имя:</mat-label>-->
+            <input matInput type="text" [formControl]="name" placeholder="Имя" required>
+            <mat-error *ngIf="name.hasError('required')">Поле "Имя" обязательно к заполнению!</mat-error>
+            <mat-error *ngIf="name.hasError('minlength')">Поле "Имя" не может быть менее 3 символов!</mat-error>
+            <mat-error *ngIf="name.hasError('maxlength')">Поле "Имя" не может быть более 25 символов!</mat-error>
+          </mat-form-field>
+<!--          Field Email-->
+          <mat-form-field appearance="outline" color="primary">
+<!--            <mat-label>Email:</mat-label>-->
+            <input matInput type="text" [formControl]="email" placeholder="Email" required>
+            <mat-error *ngIf="email.hasError('required')">Поле "Email" обязательно к заполнению!</mat-error>
+            <mat-error *ngIf="email.hasError('email')">Поле "Email" должно соответствовать корректному email адресу!</mat-error>
+            <mat-error *ngIf="email.hasError('minlength')">Поле "Email" не может быть менее 3 символов!</mat-error>
+            <mat-error *ngIf="email.hasError('maxlength')">Поле "Email" не может быть более 255 символов!</mat-error>
+          </mat-form-field>
+<!--          Field Phone-->
+          <mat-form-field appearance="outline" color="primary">
+<!--            <mat-label>Телефон:</mat-label>-->
+            <input matInput type="text" [formControl]="phone" placeholder="Ваш телефон" required>
+            <mat-error *ngIf="phone.hasError('required')">Поле "Телефон" обязательно к заполнению!</mat-error>
+            <mat-error *ngIf="phone.hasError('minlength')">Поле "Телефон" не может быть менее 11 символов!</mat-error>
+            <mat-error *ngIf="phone.hasError('maxlength')">Поле "Телефон" не может быть более 18 символов!</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" color="primary">
+<!--            <mat-label>Ваше сообщение:</mat-label>-->
+            <textarea matInput [formControl]="message" [rows]="5" placeholder="Сообщение"></textarea>
+            <mat-error *ngIf="message.hasError('required')">Поле "Сообщение" обязательно к заполнению!</mat-error>
+          </mat-form-field>
+          <div class="action-form">
+            <button mat-raised-button type="submit" color="accent" [disabled]=" submitted">Отправить</button>
+          </div>
+        </form>
+<!--        End Form-->
+      </div>
+      <div class="col-md-6 contacts" *ngIf="contact">
+        <h3>Контакты:</h3>
+        <p>Сайт: <a href="{{contact.site}}">{{contact.site}}</a></p>
+        <p>Эл. адрес: <a href="mailto:{{contact.email}}">{{contact.email}}</a></p>
+        <p>Тел: <a href="tel:{{contact.phone}}">{{contact.phone}}</a></p>
+        <p>Instagram: <a href="{{contact.instagram}}">{{contact.instagram}}</a></p>
+      </div>
+    </div>
+  </div>
+</div>

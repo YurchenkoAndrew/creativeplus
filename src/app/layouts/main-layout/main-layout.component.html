@@ -28,7 +28,7 @@
               <a [routerLink]="['/']" fragment="main-lead" style="color: white">
                 <mat-icon class="phone-icon">house</mat-icon>
               </a>
-              <span class="phone">+7 (707) 238-88-13</span>
+              <span *ngIf="contact" class="phone">{{contact.phone}}</span>
             </div>
           </div>
           <div class="col-md-8" *ngIf="isNoHandset$ | async">
@@ -40,6 +40,9 @@
       </div>
     </mat-toolbar>
     <!-- Add Content Here -->
-    <router-outlet></router-outlet>
+    <app-home-page
+      [contact]="contact"
+    ></app-home-page>
+<!--    <router-outlet></router-outlet>-->
   </mat-sidenav-content>
 </mat-sidenav-container>

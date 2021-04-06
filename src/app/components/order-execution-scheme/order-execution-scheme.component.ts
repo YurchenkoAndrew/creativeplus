@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Execution} from '../../data/models/execution';
+import {ExecutionService} from '../../data/services/execution.service';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-order-execution-scheme',
@@ -7,9 +10,17 @@ import {Component, OnInit} from '@angular/core';
 })
 export class OrderExecutionSchemeComponent implements OnInit {
 
-  constructor() { }
+  executions!: Execution[];
+  baseUrl = environment.baseUrl;
 
-  ngOnInit(): void {
+  constructor(private service: ExecutionService) {
   }
 
+  ngOnInit(): void {
+    this.initExecutions();
+  }
+
+  initExecutions(): void {
+    this.service.getAll().subscribe(response => this.executions = response);
+  }
 }

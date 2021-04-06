@@ -1,1 +1,41 @@
-<p>services works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <p class="section-block-title">Полный спектр наших улуг</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+
+      <p class="service-title">
+        <mat-icon color="primary">
+          brush
+        </mat-icon>
+        УСЛУГИ ПО ИЗГОТОВЛЕНИЮ НАРУЖНОЙ И ВНУТРЕННЕЙ РЕКЛАМЫ:
+      </p>
+      <mat-divider></mat-divider>
+      <mat-list>
+        <mat-list-item *ngFor="let service of services">
+          <mat-icon mat-list-icon color="primary">radio_button_checked</mat-icon>
+          <span class="list-item">{{service.name}}</span>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="col-lg-6">
+      <p class="service-title">
+        <mat-icon color="primary">
+          brush
+        </mat-icon>
+        ДОПОЛНИТЕЛЬНЫЕ РЕКЛАМНЫЕ УСЛУГИ:
+      </p>
+      <mat-divider></mat-divider>
+      <mat-list>
+        <mat-list-item *ngFor="let service of additionalServices">
+          <mat-icon mat-list-icon color="primary">radio_button_checked</mat-icon>
+          <span class="list-item">{{service.name}}</span>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>
+<mat-divider class="divider-end"></mat-divider>

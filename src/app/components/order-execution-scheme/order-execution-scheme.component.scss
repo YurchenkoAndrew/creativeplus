@@ -1,0 +1,27 @@
+.our-executions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .wrapper {
+    width: 180px;
+    text-align: center;
+    padding: 2rem 0;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    p {
+      font-size: 1rem;
+      padding: 1rem;
+      margin: 0;
+    }
+  }
+}
+.text-info {
+  font-weight: 300;
+  color: #666666;
+  text-align: center;
+  width: 100%;
+}

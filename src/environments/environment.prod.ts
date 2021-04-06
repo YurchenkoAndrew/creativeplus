@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://creative-plus.wsa',
-  baseUrlApi: 'http://creative-plus.wsa/api',
+  baseUrl: 'https://creative-back.a-lux.dev',
+  baseUrlApi: 'https://creative-back.a-lux.dev/api',
 };

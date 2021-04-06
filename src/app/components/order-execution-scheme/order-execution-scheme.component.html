@@ -1,1 +1,16 @@
-<p>order-execution-scheme works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <p class="section-block-title">СХЕМА ИСПОЛНЕНИЯ ЗАКАЗА</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 our-executions">
+      <div class="wrapper" *ngFor="let item of executions">
+        <img src="{{baseUrl}}/{{item.image}}" alt="{{item.name}}">
+        <p>{{item.name}}</p>
+      </div>
+      <span class="text-info">Все вышеперечисленное может меняться в зависимости от ситуации и пожеланий клиента*</span>
+    </div>
+  </div>
+</div>
