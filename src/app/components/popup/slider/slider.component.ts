@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {OwlOptions, SlidesOutputData} from 'ngx-owl-carousel-o';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {PortfolioItem} from '../../../data/models/portfolio-item';
@@ -9,7 +9,7 @@ import {environment} from '../../../../environments/environment';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent implements OnInit, OnDestroy {
 
   portfolio!: PortfolioItem[];
   activeSlides!: SlidesOutputData;
@@ -26,7 +26,7 @@ export class SliderComponent implements OnInit {
     navText: ['', ''],
     // autoWidth: true,
     // autoHeight: true,
-    autoplay: true,
+    autoplay: false,
     responsive: {
       0: {
         items: 1
@@ -46,15 +46,19 @@ export class SliderComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialogRef<SliderComponent>,
-    @Inject(MAT_DIALOG_DATA) private data: [PortfolioItem, PortfolioItem[]],
+    @Inject(MAT_DIALOG_DATA) private data: [PortfolioItem, PortfolioItem[], number],
   ) {
-    this.customOptions.startPosition = --data[0].id;
+    this.customOptions.startPosition = data[2];
     this.portfolio = data[1];
   }
 
   ngOnInit(): void {
+    console.log(this.customOptions.startPosition);
   }
 
+  ngOnDestroy(): void {
+    this.customOptions.startPosition = undefined;
+  }
 
   // getPassedData(data: SlidesOutputData): void {
   //   this.activeSlides = data;

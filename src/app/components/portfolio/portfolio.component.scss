@@ -19,8 +19,6 @@
 }
 
 .portfolio-item {
-  //width: 250px;
-  //height: 188px;
   overflow: hidden;
   position: relative;
   margin: 1rem;
@@ -30,8 +28,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    //width: 250px;
-    //height: 188px;
   }
 
   .portfolio-item-image {
@@ -72,4 +68,17 @@
 .sizeBlockHandset {
   width: 250px;
   height: 188px;
+}
+.four-item {
+  @media (min-width: 1025px) {
+    width: 250px !important;
+    height: 188px !important;
+  }
+}
+
+.two-item {
+  @media (min-width: 1025px) {
+    width: 500px !important;
+    height: 375px !important;
+  }
 }

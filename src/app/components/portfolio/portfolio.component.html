@@ -1,4 +1,4 @@
-<div class="container" *ngFor="let portfolio of portfolios">
+<div class="container" *ngFor="let portfolio of portfolios; index as idxp">
   <div class="row">
     <div class="col-sm-12">
       <p class="portfolio-block-title" *ngIf="portfolio.items.length > 0">{{portfolio.name}}</p>
@@ -9,8 +9,10 @@
       <div class="portfolio-item"
            [class.sizeBlockHandset]="isHandset$ | async"
            [class.sizeBlockNoHandset]="isNoHandset$ | async"
-           *ngFor="let item of portfolio.items"
-           (click)="onOpenDialog(item, portfolio.items)"
+           *ngFor="let item of portfolio.items; index as idxi"
+           [class.four-item]="idxi <= 3 && idxp == 0"
+           [class.two-item]="idxi <= 1 && idxp == 1"
+           (click)="onOpenDialog(item, portfolio.items, idxi)"
       >
         <div class="portfolio-item-image">
           <img src="{{baseUrl}}/{{item.image}}" alt="{{item.name}}">

@@ -49,9 +49,12 @@ export class PortfolioComponent implements OnInit {
     });
   }
 
-  onOpenDialog(item: PortfolioItem, portfolio: PortfolioItem[]): void {
+  onOpenDialog(item: PortfolioItem, portfolio: PortfolioItem[], idxi: number): void {
     const dialogRef = this.dialog.open(SliderComponent, {
-      data: [item, portfolio], width: '65%', height: 'auto', hasBackdrop: true, backdropClass: 'backdrop-class'
+      data: [item, portfolio, idxi], width: '65%', height: 'auto', hasBackdrop: true, backdropClass: 'backdrop-class'
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      this.dialog.closeAll();
     });
   }
 }
