@@ -1,20 +1,24 @@
 <a mat-list-item
+   [class.active]="(activeFragment | async)==='portfolio'"
    [routerLink]="['/']"
    fragment="portfolio"
 >Портфолио</a>
 
 <a mat-list-item
+   [class.active]="(activeFragment | async)==='our-advantages'"
    [routerLink]="['/']"
    fragment="our-advantages"
->Почему мы?</a>
+>Наши преимущества</a>
 
 <a mat-list-item
+   [class.active]="(activeFragment | async)==='order-execution-scheme'"
    [routerLink]="['/']"
    fragment="order-execution-scheme"
->Схема работы</a>
+>Схема исполнения заказа</a>
 
 <a mat-list-item
+   [class.active]="(activeFragment | async)==='contacts'"
    [routerLink]="['/']"
    fragment="contacts"
->Контакты</a>
+>Обратная связь</a>
 

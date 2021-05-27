@@ -8,6 +8,7 @@ import {share} from 'rxjs/operators';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+
   activeFragment!: any;
 
   constructor(public route: ActivatedRoute) {

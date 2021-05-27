@@ -17,11 +17,11 @@
            'col-md-12 is-handset': isHandset$ | async
            }">
             <button
+              class="menu-button"
               type="button"
               aria-label="Toggle sidenav"
               mat-icon-button
-              (click)="drawer.toggle()"
-              *ngIf="isHandset$ | async">
+              (click)="drawer.toggle()">
               <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
             </button>
             <div class="header-phone" [ngStyle]="{margin: (isHandset$ | async) ? '0 auto' : '0px'}">
@@ -31,7 +31,8 @@
               <span *ngIf="contact" class="phone">{{contact.phone}}</span>
             </div>
           </div>
-          <div class="col-md-8" *ngIf="isNoHandset$ | async">
+          <div class="col-md-8 main-nav"
+               *ngIf="isNoHandset$ | async">
             <mat-nav-list>
               <app-navigation class="is-no-handset"></app-navigation>
             </mat-nav-list>

@@ -4,12 +4,13 @@
   align-items: center;
   margin: 1rem 0;
   padding: 1rem;
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 900;
   text-align: center;
-  color: #1a237e;
+  //color: #1a237e;
+  color: #0a5bb7;
 }
 
 .portfolio-items {
@@ -60,8 +61,16 @@
 }
 
 .sizeBlockNoHandset {
-  width: 320px;
-  height: 240px;
+  width: 348px;
+  height: 261px;
+  @media (min-width: 1440px){
+    width: 408px;
+    height: 306px;
+  }
+  @media (min-width: 1140px) and (max-width: 1279px) {
+    width: 400px;
+    height: 300px;
+  }
 }
 
 
@@ -70,15 +79,39 @@
   height: 188px;
 }
 .four-item {
-  @media (min-width: 1025px) {
-    width: 250px !important;
-    height: 188px !important;
+  @media (min-width: 1440px){
+    width: 298px;
+    height: 224px;
+  }
+  @media (min-width: 1280px) and (max-width: 1439px){
+    width: 252px;
+    height: 189px;
+  }
+  @media (min-width: 1025px) and (max-width: 1139px) {
+    width: 250px;
+    height: 188px;
+  }
+  @media (min-width: 1140px) and (max-width: 1279px){
+    width: 298px;
+    height: 224px;
   }
 }
 
 .two-item {
-  @media (min-width: 1025px) {
-    width: 500px !important;
-    height: 375px !important;
+  @media (min-width: 1440px){
+    width: 628px;
+    height: 471px;
+  }
+  @media (min-width: 1280px) and (max-width: 1439px) {
+    width: 538px;
+    height: 404px;
+  }
+  @media (min-width: 1140px) and (max-width: 1279px) {
+    width: 628px;
+    height: 471px;
+  }
+  @media (min-width: 1025px) and (max-width: 1139px){
+    width: 538px;
+    height: 404px;
   }
 }

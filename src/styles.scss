@@ -44,7 +44,7 @@ html, body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Arial, "Helvetica Neue", sans-serif;
 }
 
 .is-no-handset {
@@ -78,19 +78,22 @@ section {
 .backdrop-class {
   background: rgba(0, 0, 0, 0.75);
 }
+
 .section-block-title {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
   padding: 1rem 0 2rem 0;
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 40px;
+  line-height: 40px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 900;
   text-align: center;
-  color: #1a237e;
+  //color: #1a237e;
+  color: #0a5bb7;
 }
+
 .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
   width: auto;
 }
@@ -115,12 +118,32 @@ section {
   border-radius: 5px;
   padding: -10px;
 }
+
 .cdk-overlay-pane {
   @media (max-width: 767px) {
     width: 100% !important;
     max-width: 100vw !important;
   }
 }
+
 .mat-list-base .mat-list-item.mat-list-item-with-avatar, .mat-list-base .mat-list-option.mat-list-item-with-avatar {
   height: auto !important;
 }
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Arail, sans-serif',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+// Override the typography in the core CSS.
+@include mat-core($custom-typography);

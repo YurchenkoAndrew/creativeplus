@@ -48,3 +48,13 @@ mat-icon.phone-icon{
 .container {
   width: 100%;
 }
+.main-nav {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+.menu-button {
+  @media (min-width: 1025px) {
+    display: none;
+  }
+}

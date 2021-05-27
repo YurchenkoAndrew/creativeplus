@@ -10,8 +10,8 @@
            [class.sizeBlockHandset]="isHandset$ | async"
            [class.sizeBlockNoHandset]="isNoHandset$ | async"
            *ngFor="let item of portfolio.items; index as idxi"
-           [class.four-item]="idxi <= 3 && idxp == 0"
-           [class.two-item]="idxi <= 1 && idxp == 1"
+           [class.four-item]="(idxi <= 3 && idxp == 0) || (idxi <= 3 && idxp == 2)"
+           [class.two-item]="(idxi <= 1 && idxp == 1) || (idxi <= 1 && idxp == 3)"
            (click)="onOpenDialog(item, portfolio.items, idxi)"
       >
         <div class="portfolio-item-image">

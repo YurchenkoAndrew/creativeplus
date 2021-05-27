@@ -1,6 +1,12 @@
+section#main-lead{
+  padding-bottom: 0;
+}
 section#services{
   padding-bottom: 0;
 }
+section#contacts{
+   padding-bottom: 0;
+ }
 .wrapper-send-message {
   padding: 4rem 0;
   background: #1a237e;
@@ -15,4 +21,7 @@ section#services{
       line-height: 3.2rem;
     }
   }
+}
+.portfolio-divider {
+  border-top: #1a237e solid 2px;
 }
