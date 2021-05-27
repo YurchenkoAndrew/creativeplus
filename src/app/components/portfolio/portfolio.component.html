@@ -7,11 +7,11 @@
   <div class="row">
     <div class="col-sm-12 portfolio-items">
       <div class="portfolio-item"
+           *ngFor="let item of portfolio.items; index as idxi"
            [class.sizeBlockHandset]="isHandset$ | async"
            [class.sizeBlockNoHandset]="isNoHandset$ | async"
-           *ngFor="let item of portfolio.items; index as idxi"
-           [class.four-item]="(idxi <= 3 && idxp == 0) || (idxi <= 3 && idxp == 2)"
-           [class.two-item]="(idxi <= 1 && idxp == 1) || (idxi <= 1 && idxp == 3)"
+           [class.four-item]="idxi <= 3 && idxp % 2 == 0 && idxp != 4 || idxp == 5"
+           [class.two-item]="idxp % 2 !== 0 && idxp != 5"
            (click)="onOpenDialog(item, portfolio.items, idxi)"
       >
         <div class="portfolio-item-image">
