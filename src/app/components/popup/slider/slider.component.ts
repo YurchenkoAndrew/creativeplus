@@ -53,16 +53,9 @@ export class SliderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log(this.customOptions.startPosition);
   }
 
   ngOnDestroy(): void {
     this.customOptions.startPosition = undefined;
   }
-
-  // getPassedData(data: SlidesOutputData): void {
-  //   this.activeSlides = data;
-  //   console.log(this.activeSlides);
-  // }
-
 }

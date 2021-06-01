@@ -1,4 +1,5 @@
-<div style="background-image: url(assets/header-bg.jpg); background-position: center; background-attachment: scroll; background-size: cover; width: 100%; height: 704px" *ngIf="mainLead">
+<div style="background-image: url(assets/header-bg.jpg); background-position: center; background-attachment: scroll; background-size: cover; width: 100%; height: 704px" *ngIf="mainLead; else load"
+>
   <div class="container">
     <div class="row">
       <div class="col-sm-12 main-lead">
@@ -10,3 +11,9 @@
     </div>
   </div>
 </div>
+
+<ng-template #load>
+  <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

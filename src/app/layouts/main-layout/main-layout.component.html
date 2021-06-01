@@ -1,9 +1,10 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-               [mode]="(isHandset$ | async) ? 'over' : 'side'"
-               [opened]="(isHandset$ | async) === true">
-    <mat-toolbar>Меню</mat-toolbar>
+               [mode]="(isHandset$ | async) ? 'over' : 'side'">
+
+<!--    [opened]="(isHandset$ | async) === false"-->
+    <mat-toolbar class="primary">Меню</mat-toolbar>
     <mat-nav-list>
       <app-navigation></app-navigation>
     </mat-nav-list>
@@ -42,8 +43,15 @@
     </mat-toolbar>
     <!-- Add Content Here -->
     <app-home-page
+      *ngIf="contact; else load"
       [contact]="contact"
     ></app-home-page>
 <!--    <router-outlet></router-outlet>-->
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<ng-template #load>
+  <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

@@ -39,6 +39,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {CONTACT_URL_TOKEN} from './data/services/contact.service';
 import {FooterComponent} from './components/footer/footer.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import {FooterComponent} from './components/footer/footer.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     {
