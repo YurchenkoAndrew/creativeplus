@@ -43,7 +43,6 @@
     </mat-toolbar>
     <!-- Add Content Here -->
     <app-home-page
-      *ngIf="contact; else load"
       [contact]="contact"
     ></app-home-page>
 <!--    <router-outlet></router-outlet>-->
@@ -55,3 +54,4 @@
     <mat-spinner></mat-spinner>
   </div>
 </ng-template>
+<!--*ngIf="contact; else load"-->
